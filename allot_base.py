@@ -99,7 +99,7 @@ def gmk2pb(string):
         base = string.split('k')[0]
         base = float(base)*1e+03
     else:
-        base = float(base)
+        base = float(string)
 
     return int(base)
 
