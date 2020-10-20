@@ -119,13 +119,15 @@ def n50(lengths):
 
     sum_length = sum(lengths)
     accu_length = 0
+    n = 0
 
     for i in sorted(lengths, reverse=True):
         accu_length += i
         if accu_length >= sum_length*0.5:
+            n = i 
             break 
 
-    return i
+    return n
 
 
 def plot_read_length(file, out, xmin=0, bins=50):
@@ -150,8 +152,8 @@ def plot_read_length(file, out, xmin=0, bins=50):
     ax.set_ylabel('Count', font)
     ax.set_xlabel('Length', font)
     plt.xticks()
-    plt.savefig("%s_reads_length.pdf" % out)
-    plt.savefig("%s_reads_length.png" % out, dpi=700) 
+    plt.savefig("%s.reads_length.pdf" % out)
+    plt.savefig("%s.reads_length.png" % out, dpi=700) 
 
 
 def add_hlep(parser):
