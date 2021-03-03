@@ -33,7 +33,7 @@ def read_fastq(file):
             line = line.decode('utf-8')
         line = line.strip()
 
-        if not line or line.startswith("#"):
+        if not line:
             continue
         if not seq:
             seq.append(line.strip("@").split()[0])
